@@ -1,0 +1,228 @@
+/* Sección logo menú */
+.menu__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    padding: 0 10%;
+    background-color: var(--color-secundario);
+}
+
+.menu__container a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--color-terciario);
+}
+
+.menu__mobile {
+    display: none;
+}
+
+.menu__navegacion {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.menu__navegacion--elemento a {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: var(--color-terciario);
+    text-decoration: none;
+}
+
+.menu__navegacion--elemento a:hover {
+    border: 1px solid  var(--color-bordes-botones);
+    border-radius: 5px;
+    padding: 8px;
+}
+
+/* Seccion Inicio */
+
+.inicio__container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-top: 80px;
+    padding: 5% 10%;
+}
+
+.inicio__container img,
+.sobre__mí__container img {
+    border-radius: 50%;
+    width: 35%;
+    height: 35%;
+}
+
+.inicio__informacion {
+    padding: 4% 4% 0% 0%;
+    text-align: left;
+}
+
+
+.fa-solid,
+.inicio__informacion__saludo,
+.sobre__mí__titulo {
+    font-size: 3.25rem;
+    font-weight: 900;
+    color: var(--color-terciario);
+    margin: 0;
+}
+
+.fa-hand {
+    color: #ffc3aa;
+}
+
+.inicio__informacion__nombre {
+    font-size: 3.125rem;
+    margin: 0;
+}
+
+.nombre__leisy {
+    color: var(--color-secundario);
+}
+
+.sobre__mí__informacion,
+.inicio__informacion p {
+    font-size: 1.375rem;
+}
+
+/* Redes sociales */
+
+
+.inicio__redes__sociales ul {
+    display: flex;
+    list-style: none;
+    padding: 4% 0% 4% 0%;
+    gap: 40px;
+    font-size: 1rem;
+}
+
+.inicio__redes__sociales a {
+    text-decoration: none;
+    color: var(--color-terciario);
+}
+
+/* Descarga cv */
+
+.inicio__download__cv ul {
+    list-style: none;
+    padding: 0;
+}
+
+.inicio__download__cv a {
+    text-decoration: none;
+    color: var(--color-terciario);
+}
+
+.boton-cv {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    /* Verde */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Seccion sobre mí */
+
+.sobre__mí__container {
+    padding: 5% 10%;
+}
+
+.sobre__mí__informacion {
+    display: flex;
+    align-items: center;
+    padding-top: 4%; 
+}
+
+.sobre__mí__descripcion {
+    padding-left: 54px;
+}
+
+/* hobbies */
+.hobbies__container {
+    padding: 5% 10%;
+}
+
+/* Footer */
+
+.footer {
+    padding: 15px;
+    text-align: center;
+    color: var(--color-terciario);
+    font-family: var(--fuente-inter);
+    font-size: 1.25rem;
+    font-weight: 400;
+    background-color: var(--color-secundario);
+    color: var(--color-terciario);
+}
+
+@media (max-width: 934px) {
+
+    .menu__mobile {
+        display: block;
+    }
+
+    .menu__navegacion {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 100%;
+        left: 0;
+        top: 0;
+        margin: 0;
+        gap: 30px;
+        width: 100%;
+        background-color: var(--color-secundario);
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px var(--color-terciario);
+        transition: all 0.5s ease-in-out;
+        z-index: 100;
+    }
+
+    .menu__navegacion.show {
+        display: flex;
+    }
+
+    /* Seccion Inicio */
+
+    .inicio__container {
+        flex-direction: column;
+        padding: 4% 1% 0% 3%;
+    }
+
+    .inicio__informacion {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Redes sociales */
+
+    .inicio__redes__sociales ul {
+        padding: 4% 0% 4% 0%;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    /* seccion sobre mí */
+    .sobre__mí__informacion {
+        flex-direction: column-reverse;
+    }
+
+    .sobre__mí__descripcion {
+        padding-left: 0%;
+    }
+}
+
+@media (max-width: 490px) {}

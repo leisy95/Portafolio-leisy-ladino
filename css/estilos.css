@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+    --color-primario: #0C0C0C;
+    --color-secundario: #006F77;
+    --color-terciario: #FFFFFF;
+    --color-bordes-botones: #00c7ec;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    background-color: var(--color-primario);
+    height: 100vh;
+    position: relative;
+    overflow: auto;
+    font-size: 14px;
+    color: white;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0;
+}
