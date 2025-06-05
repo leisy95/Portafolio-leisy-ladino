@@ -1,22 +1,24 @@
 *,
 *::before,
 *::after {
-    --color-primario: #0C0C0C;
+    --color-primario:#141414 ;
     --color-secundario: #006F77;
-    --color-terciario: #FFFFFF;
-    --color-bordes-botones: #00c7ec;
+    --color-terciario: #ffff;
+    --color-botones: #B74F00;
+    --color-fondo: linear-gradient(to right top, #006f77, #165c6a, #224959, #253745, #22272f, #22272f, #22272f, #22272f, #253745, #224959, #165c6a, #006f77);
+    --color-header: linear-gradient(to right top, #253745, #22272f, #22272f, #22272f, #22272f, #253745, #224959, #165c6a, #006f77);
     box-sizing: border-box;
 }
 
 html,
 body {
-    font-family: Roboto, Arial, Helvetica, sans-serif;
-    background-color: var(--color-primario);
-    height: 100vh;
+    /* font-family: "Fredoka", sans-serif; */
+    font-family: "Fredoka", sans-serif;
+    background-image: var(--color-fondo);
     position: relative;
     overflow: auto;
     font-size: 14px;
-    color: white;
+    color: var(--color-terciario);;
     box-sizing: border-box;
     text-align: center;
     margin: 0;
