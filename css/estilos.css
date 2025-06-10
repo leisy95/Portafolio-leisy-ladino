@@ -1,7 +1,7 @@
 *,
 *::before,
 *::after {
-    --color-primario:#141414 ;
+    --color-primario: #1a202c;
     --color-secundario: #006F77;
     --color-terciario: #ffff;
     --color-botones: #B74F00;

@@ -81,6 +81,7 @@
     align-items: center;
     margin-top: 80px;
     padding: 5% 10%;
+    scroll-margin-top: 80px;
 }
 
 .inicio__container svg {
@@ -103,17 +104,23 @@ path.inicio__movimiento {
     text-align: left;
 }
 
-
 .fa-solid,
-.inicio__informacion__saludo,
-.sobre__mí__titulo,
-.portafolio__titulo h2,
-.skills__titulo,
-h2 {
+.inicio__informacion__saludo {
     font-size: 3.25rem;
     font-weight: 900;
     color: var(--color-terciario);
     margin: 0;
+}
+
+.portafolio__titulo h2,
+.skills__titulo,
+.formacion__titulo {
+    color: #ffffff;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    display: inline-block;
 }
 
 .fa-hand {
@@ -131,7 +138,8 @@ h2 {
 
 .inicio__informacion p,
 .sobre__mí__descripcion p,
-.skills__info p {
+.skills__info p,
+.formacion__acad__info p {
     font-size: 1.4rem;
     text-align: left;
 }
@@ -166,65 +174,83 @@ h2 {
 
 /* Descarga cv */
 
-.inicio__download__cv ul {
-    list-style: none;
-    padding: 0;
-}
-
-.inicio__download__cv a {
+a.boton-cv,
+.certificado__boton {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--color-botones);
+    color: var(--color-terciario);
     text-decoration: none;
-    color: var(--color-botones);
-}
-
-.inicio__download__cv ul li a {
-    font-size: 1.25rem;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px var(--color-primario);
     text-transform: uppercase;
 }
 
-a.boton-cv {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: var(--color-botones);
-    color: var(--color-terciario);
-    ;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
+.a.boton-cv:hover,
+.certificado__boton:hover {
+    background-color: var(--color-terciario);
+    color: var(--color-botones);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Seccion sobre mí */
 
 .sobre__mí__container {
+    padding: 2% 10%;
+    width: 100%;
+    scroll-margin-top: 80px;
+}
+
+.sobre__mi__imagen,
+.certificaciones__icon {
     display: flex;
     align-items: center;
-    padding: 2% 10%;
-}
-
-.sobre__mi__imagen {
-    width: 40%;
-}
-
-.sobre__mí__container svg {
+    gap: 20px;
+    text-align: left;
+    padding: 20px;
     width: 100%;
-    height: 100%;
+    margin: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-botones);
+}
+
+.sobre__mi__imagen img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.sobre__mi__boton {
+    padding: 10px 20px;
+    color: var(--color-terciario);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.75rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.sobre__mi__boton:hover {
+    box-shadow: 0 4px 12px var(--color-terciario)
 }
 
 .sobre__mí__descripcion {
-    width: 60%;
-    padding-left: 80px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px var(--color-primario);
 }
+
 
 /*Skills*/
 
 .skills__container {
     padding: 2% 10%;
-}
-
-.skills__tituloo {
-    padding-bottom: 80px;
+    scroll-margin-top: 80px;
 }
 
 .skills__tecnologias {
@@ -276,78 +302,121 @@ a.boton-cv {
     color: #563d7c;
 }
 
+.fa-angular {
+    color: #d4173b;
+}
+
+.fa-git-alt {
+    color: #f34f29;
+}
+
+.fa-users-cog {
+    color: #0c747c;
+}
+
 .skill__nombre {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: var(--color-terciario);
 }
 
 .skill:hover {
-    box-shadow: 0 6px 16px rgba(255, 255, 255);
+    box-shadow: 0 6px 16px var(--color-terciario);
 }
 
-/* Portafolio */
-.Portafolio__container {
-    padding: 5% 10%;
+.skills__swiper .swiper-pagination-bullet {
+    background-color: var(--color-terciario);
+    opacity: 1;
 }
 
-.portafolio__titulo {
-    text-align: center;
+.skills__swiper .swiper-pagination-bullet-active {
+    background-color: var(--color-botones);
+}
+
+/*Formacion Academica*/
+
+.formacion__container {
+    padding: 2% 10%;
+    scroll-margin-top: 60px;
+}
+
+.formacion__linea {
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+}
+
+.formacion__linea::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: var(--color-botones);
+}
+
+.formacion__linea__item {
+    position: relative;
     margin-bottom: 40px;
+    padding-left: 40px;
 }
 
-.portafolio__info {
+.linea__tiempo__punto {
+    position: absolute;
+    left: -1.52rem;
+    top: 0.4rem;
+    transform: translateX(-50%);
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--color-botones);
+    border-radius: 50%;
+    border: 2px solid var(--color-terciario);
+    box-shadow: 0 0 0 2px var(--color-secundario);
+    z-index: 1;
+}
+
+.formacion__linea article {
     display: flex;
-    grid-auto-columns: repeat(auto-fid, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.portafolio__info__card {
-    background: var(--color-primario);
-    ;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(252, 248, 248, 0.993);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 320px;
-}
-
-.portafolio__info__card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
-
-.portafolio__info__card img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    display: block;
-}
-
-/* Detalles del proyecto */
-.portafolio__detalle {
-    padding: 20px;
-    padding-right: 20px;
-}
-
-.portafolio__detalle h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: #2980b9;
-}
-
-.portafolio__detalle p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #666;
+    gap: 100px;
     text-align: left;
+    background-color: var(--color-primario);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--color-primario);
 }
 
+.formacion__linea h3 {
+    color: var(--color-botones);
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
 
+.formacion__detalle {
+    width: 40%;
+}
 
+.formacion__linea article .compania {
+    color: var(--color-terciario);
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.formacion__linea article .time {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.formacion__linea article p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    width: 60%;
+    margin: 0;
+}
 
 /* Footer */
 
@@ -398,7 +467,7 @@ a.boton-cv {
     .inicio__container,
     .sobre__mí__container {
         flex-direction: column;
-        padding: 4% 1% 0% 3%;
+        padding: 4% 4% 0% 4%;
     }
 
     .inicio__container svg {
@@ -411,6 +480,7 @@ a.boton-cv {
         width: 100%;
         text-align: center;
         order: 1;
+        padding-left: 15px;
     }
 
     /* Redes sociales */
@@ -427,58 +497,129 @@ a.boton-cv {
     }
 
     .sobre__mi__imagen {
-        width: 80%;
+        width: 100%;
         order: 2;
     }
 
     .sobre__mi__imagen svg {
-        width: 80%;
+        width: 50%;
+        height: auto;
     }
 
     .sobre__mí__descripcion {
         width: 100%;
-        padding-left: 0%;
+        padding-left: 15px;
         order: 1;
     }
 }
 
 @media (max-width: 768px) {
-    .sobre__mi__contenido {
+
+    /*menu*/
+    .menu__navegacion {
+        display: none;
         flex-direction: column;
     }
 
+    .menu__navegacion.active {
+        display: flex;
+    }
+
+    .menu__mobile {
+        display: block;
+        cursor: pointer;
+    }
+
+    /*Inicio*/
+
+    .inicio__informacion {
+        padding-left: 15px;
+    }
+
+    .inicio__informacion__nombre {
+        font-size: 2.375rem;
+    }
+
+    .inicio__informacion p {
+        padding-top: 10px;
+    }
+
+    .inicio__container svg {
+        display: none;
+    }
+
+    .inicio__redes__sociales {
+        padding-top: 15px;
+        padding-bottom: 30px;
+    }
+
+    /*Sobre mi*/
+
+    .sobre__mí__container {
+        padding-top: 45px;
+    }
+
     .sobre__mi__imagen {
-        order: 2;
-    }
-
-    .sobre__mi__descripcion {
-        order: 1;
-    }
-
-    .sobre__mi__descripcion {
         width: 100%;
-        padding-left: 0;
+        background-color: transparent;
+        box-shadow: 0 4px 12px var(--color-botones);
     }
 
-    .sobre__mi__imagen {
+    .sobre__mí__descripcion {
+        padding-left: 15px;
+    }
+
+    .sobre__mí__descripcion p {
+        text-align: justify;
+    }
+
+    /*Skills*/
+
+
+
+    /*Formacion Academica*/
+
+    .formacion__container {
+        padding-left: 15px;
+        padding-right: 10px;
+    }
+
+    .formacion__linea__item {
+        padding-left: 5px;
+    }
+
+    .formacion__linea article {
+        flex-direction: column;
+        gap: 30px;
+        background-color: transparent;
+        padding: 5px;
+    }
+
+    .formacion__detalle {
         width: 100%;
     }
 
-    /*Portafolio*/
-
-    .portafolio__info {
-        flex-wrap: wrap;
+    .formacion__linea article p {
+        width: 100%;
+        line-height: 1.2;
     }
 
-    /*Footer*/
-    /* .footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 10%;
-        z-index: 1000;
-        justify-content: center;
-        text-align: center;
-    } */
+}
+
+.leer-mas {
+    color: var(--color-botones);
+    cursor: pointer;
+    text-decoration: n;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .ocultar__en__Movil {
+        display: none;
+    }
+
+    .ocultar__en__Movil.mostrar {
+        display: block;
+    }
 }

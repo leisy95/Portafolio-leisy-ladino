@@ -21,11 +21,27 @@ const mensaje = "una apasionada del desarrollo web";
 // Menu Responsive para mobiles
 function mobile() {
   const menu = document.getElementById("idMobile");
-  menu.classList.add("show");
-  menu.style.listStyle = none
+  menu.classList.toggle("active");
 }
 
 const container = document.querySelector('body');
+
+// para dirigir a cada seccion
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.menu__navegacion a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      console.log('Click en:', this.textContent);
+      const targetId = this.getAttribute('href');
+      const target = document.querySelector(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+      document.getElementById('idMobile').classList.remove('active');
+    });
+  });
+});
 
 //Crea los círculos
 for (let i = 0; i < 50; i++) {
@@ -110,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, {
-    threshold: 0.1 // el porcentaje del elemento visible para activar
+    threshold: 0.1
   });
 
   document.querySelectorAll('.derecha').forEach(element => {
@@ -118,22 +134,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  const skills = document.querySelector(".skills__tecnologias");
-  const orbitFigures = skills.querySelectorAll(".orbit");
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }else {
+        entry.target.classList.remove('show');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
 
-  const { width, height } = skills.getBoundingClientRect();
-  const centerX = width / 2;
-  const centerY = height / 2;
-  const radius = 110;
-
-  orbitFigures.forEach((figure, i) => {
-    const angle = (2 * Math.PI / orbitFigures.length) * i;
-    const x = centerX + radius * Math.cos(angle) - 40;
-    const y = centerY + radius * Math.sin(angle) - 40;
-
-    figure.style.transform = `translate(${x}px, ${y}px)`;
-    figure.style.opacity = 1;
+  document.querySelectorAll('.izquierda').forEach(element => {
+    observer.observe(element);
   });
 });
 
@@ -147,8 +162,20 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     breakpoints: {
       320: { slidesPerView: 2, spaceBetween: 10 },
-      640: { slidesPerView: 2, spaceBetween: 20 },
+      640: { slidesPerView: 3, spaceBetween: 20 },
       1024: { slidesPerView: 4, spaceBetween: 30 },
     },
   });
 });
+
+ document.addEventListener('DOMContentLoaded', function () {
+    const toggleLink = document.getElementById('toggleLink');
+    const contenido = document.getElementById('mascontenido');
+
+    toggleLink.addEventListener('click', function () {
+      contenido.classList.toggle('mostrar');
+
+      // Cambia el texto dinámicamente
+      this.textContent = contenido.classList.contains('mostrar') ? 'Leer menos' : 'Leer más';
+    });
+  });
