@@ -6,7 +6,8 @@
     --color-terciario: #ffff;
     --color-botones: #B74F00;
     --color-fondo: linear-gradient(to right top, #006f77, #165c6a, #224959, #253745, #22272f, #22272f, #22272f, #22272f, #253745, #224959, #165c6a, #006f77);
-    --color-header: linear-gradient(to right top, #253745, #22272f, #22272f, #22272f, #22272f, #253745, #224959, #165c6a, #006f77);
+    --color-header: linear-gradient(to right top, #006f77b3,#165c6ab3,#224959b3,#253745b3,
+            #22272fb3,#22272fb3,#22272fb3,#22272fb3,#253745b3,#224959b3,#165c6ab3,#006f77b3);
     box-sizing: border-box;
 }
 
@@ -18,7 +19,8 @@ body {
     position: relative;
     overflow: auto;
     font-size: 14px;
-    color: var(--color-terciario);;
+    color: var(--color-terciario);
+    ;
     box-sizing: border-box;
     text-align: center;
     margin: 0;

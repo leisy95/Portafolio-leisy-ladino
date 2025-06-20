@@ -80,22 +80,6 @@ window.addEventListener("scroll", function () {
 
 // animacion de section sobre mi
 
-document.addEventListener('DOMContentLoaded', () => {
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target); // para que solo se anime una vez
-      }
-    });
-  }, {
-    threshold: 0.1 // el porcentaje del elemento visible para activar
-  });
-
-  document.querySelectorAll('.animar').forEach(element => {
-    observer.observe(element);
-  });
-});
 
 document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver((entries, observer) => {
@@ -152,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// seccion Tecnologias paginacion
 document.addEventListener('DOMContentLoaded', () => {
   const swiper = new Swiper('.skills__swiper', {
     slidesPerView: 4,
