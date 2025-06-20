@@ -600,7 +600,7 @@ a.boton-cv,
     }
 
     .proyecto__general {
-        flex-direction: column;
+        display: grid;
     }
 }
 
@@ -698,6 +698,10 @@ a.boton-cv,
         padding-right: 20px;
     }
 
+    .proyecto__general {
+        flex-direction: column;
+    }
+
     /*Footer*/
     .footer {
         padding: 5px;
@@ -729,4 +733,10 @@ a.boton-cv,
     .ocultar__en__Movil.mostrar {
         display: block;
     }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .proyecto__general {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
